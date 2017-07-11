@@ -68,10 +68,12 @@ searchLayout.setOnEditorActionListener(new SearchLayout.OnEditorActionListener()
 });
 // (满足部分情景) 设置输入框状态，true是输入框移至左侧，自动弹出键盘，否则反之
 searchLayout.changeLayout(true);
+// 弹出收起键盘，changeLayout()方法中调用了此，方法，特殊情况使用
+searchLayout.setSoftInput(true);
 ```
 目前自定义属性都是在xml布局里面设置，后续将增加代码动态设置的方法。  
-###核心代码
-####输入框的动画
+### 核心代码
+#### 输入框的动画
 输入框的动画是利用了 ConstraintLayout 的属性通过改变 EditText 的宽度来实现动画的：
 ```JAVA
 TransitionManager.beginDelayedTransition(constraintLayout);
@@ -79,7 +81,7 @@ constraintSet.constrainWidth(R.id.et, constraintLayout.getLayoutParams().width);
 // constraintSet.constrainWidth(R.id.et, LayoutParams.WRAP_CONTENT);
 constraintSet.applyTo(constraintLayout);
 ```
-####按钮的动画
+#### 按钮的动画
 按钮的动画效果也是利用系统原生的自带动画属性实现的  
 ViewGroup 中有个方法 setLayoutTransition ，当子布局发生变化时会触发默认动画，也可以在布局里面设置（是设置在控件的父布局中）：
 ```XML
