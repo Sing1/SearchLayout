@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'SearchLayout'
+
+    publishedGroupId = 'sing.searchlayout'
+    libraryName = 'SearchLayout'
+    artifact = 'library'
+
+    libraryDescription = 'This is a Util'
+
+    siteUrl = 'https://github.com/Sing1/SearchLayout'
+    gitUrl = 'https://github.com/Sing1/SearchLayout.git'
+
+    libraryVersion = '1.0.1'
+
+    developerId = 'sing1'
+    developerName = 'sing1'
+    developerEmail = '15202653100@163.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0.1"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
