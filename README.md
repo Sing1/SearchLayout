@@ -6,7 +6,7 @@
 ```groovy
 dependencies {
     ...
-    compile 'sing.searchlayout:library:1.0.1'
+    compile 'sing.searchlayout:library:1.0.3'
 }
 ```
 ## Maven:
@@ -14,7 +14,7 @@ dependencies {
 <dependency>
 　　<groupId>sing.searchlayout</groupId>
 　　<artifactId>library</artifactId>
-　　<version>1.0.1</version>
+　　<version>1.0.3</version>
 　　<type>pom</type>
 </dependency>
 ```  
